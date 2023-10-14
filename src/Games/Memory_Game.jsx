@@ -14,7 +14,7 @@ const MemoryGame = () => {
     "giraffe",
     "giraffe",
     "zebra",
-    "zebra"
+    "zebra",
   ];
 
   const shuffleArray = (array) => {
@@ -53,24 +53,27 @@ const MemoryGame = () => {
   };
 
   return (
-    <div className="memorygame">
-      {cards.map((card, index) => (
-        <div
-          key={index}
-          className={`card ${
-            flipped.includes(index) || solved.includes(card) ? "flipped" : ""
-          }`}
-          onClick={() =>
-            !flipped.includes(index) &&
-            !solved.includes(card) &&
-            !disabled &&
-            handleCardClick(index)
-          }
-        >
-          <div className="front">Front</div>
-          <div className="back">{card}</div>
-        </div>
-      ))}
+    <div>
+      <h1>Card Memory Challenge</h1>
+      <div className="memorygame">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className={`card ${
+              flipped.includes(index) || solved.includes(card) ? "flipped" : ""
+            }`}
+            onClick={() =>
+              !flipped.includes(index) &&
+              !solved.includes(card) &&
+              !disabled &&
+              handleCardClick(index)
+            }
+          >
+            <div className="front">Front</div>
+            <div className="back">{card}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
