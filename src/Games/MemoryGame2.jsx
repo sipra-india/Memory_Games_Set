@@ -6,7 +6,7 @@ const MemoryGame2 = () => {
   const listnum = Math.floor(Math.random() * 15);
   const initialWords = wordLists[listnum];
   const [words, setWords] = useState(initialWords);
-  const [shuffledWords, setShuffledWords] = useState([]);
+  const [count, Setcount] = useState(0);
   const [timer, setTimer] = useState(20);
   const [completed, setCompleted] = useState(false);
   const [incompleted, setinCompleted] = useState(false);
@@ -34,13 +34,13 @@ const MemoryGame2 = () => {
     setTimer(20);
     setCompleted(false);
     setWords(initialWords);
-    setShuffledWords([]);
   };
 
   const handleCheckOrder = () => {
     if (words.join("") === initialWords.join("")) {
       setCompleted(true);
       setinCompleted(false);
+      Setcount(count + 1);
     } else {
       setinCompleted(true);
       setCompleted(false);
@@ -62,7 +62,6 @@ const MemoryGame2 = () => {
           onChange={(e) => {
             const updatedWords = [...words];
             updatedWords[index] = e.target.value;
-            setWords(updatedWords);
           }}
         />
       </li>
@@ -101,6 +100,7 @@ const MemoryGame2 = () => {
       <div id="next">
         <button onClick={handleStartGame}>Restart Game</button>
       </div>
+      <div id="score">Score: {count}</div>
     </div>
   );
 };
