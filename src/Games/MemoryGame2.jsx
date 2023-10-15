@@ -73,7 +73,7 @@ const MemoryGame2 = () => {
       <div id="game">
         {timer > 0 ? (
           <div>
-            <p>Memorize the words for {timer} seconds:</p>
+            <p id="memorize">Memorize the words for {timer} seconds:</p>
             <PrintList words={words} />
           </div>
         ) : (
@@ -82,13 +82,21 @@ const MemoryGame2 = () => {
             <ul>
               <InputList words={suffleWords} setWords={setSuffleWords} />
             </ul>
-            {newGame && <button onClick={handleCheckOrder}>Check Order</button>}
+            {newGame && (
+              <button className="button" onClick={handleCheckOrder}>
+                Check Order
+              </button>
+            )}
             <p>{completionMsg}</p>
           </div>
         )}
       </div>
       <div id="next">
-        {!newGame && <button onClick={handleStartGame}>Restart Game</button>}
+        {!newGame && (
+          <button className="button" onClick={handleStartGame}>
+            Restart Game
+          </button>
+        )}
       </div>
       {!newGame && <div id="score">Score: {count}</div>}
     </div>

@@ -37,6 +37,7 @@ body {
 
 .btn,
 #close {
+  margin: 10px 0;
   background-color: lightgrey;
   border: none;
   padding: 5px;

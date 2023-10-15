@@ -17,7 +17,8 @@ li {
   text-align: center;
 }
 
-button {
-  margin: 10px 0;
+.button {
+  display: inline-block;
+  width: 100%;
   text-align: center;
 }
