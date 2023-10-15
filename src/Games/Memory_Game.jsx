@@ -35,6 +35,7 @@ const MemoryGame = () => {
   const [cardcount, SetCardcount] = useState([]);
   const [matchedPairs, setMatchedPairs] = useState(0);
   const [score, SetScore] = useState(0);
+  const [showWords, setShowWords] = useState(true);
 
   useEffect(() => {
     if (flipped.length === 2) {
@@ -58,6 +59,14 @@ const MemoryGame = () => {
     }
   }, [matchedPairs]);
 
+  useEffect(() => {
+    if (showWords) {
+      setTimeout(() => {
+        setShowWords(false);
+      }, 3000); // Adjust the delay as needed (3 seconds in this case).
+    }
+  }, []);
+
   const handleCardClick = (index) => {
     if (flipped.length < 2) {
       setFlipped([...flipped, index]);
@@ -66,6 +75,7 @@ const MemoryGame = () => {
   };
 
   const HandleStart = () => {
+    setShowWords(true); // Show words again when restarting the game.
     setSolved([]);
     setFlipped([]);
     setCards(shuffleArray(animalImages));
@@ -78,6 +88,7 @@ const MemoryGame = () => {
   return (
     <div>
       <h1>Card Memory Challenge</h1>
+      {showWords && <p>Flipping the cards in 3 seconds</p>}
       <div className="memorygame">
         {cards.map((card, index) => (
           <div
@@ -92,7 +103,7 @@ const MemoryGame = () => {
               handleCardClick(index)
             }
           >
-            <div className="front"></div>
+            <div className="front">{showWords ? card : ""}</div>
             <div className="back">{card}</div>
           </div>
         ))}
