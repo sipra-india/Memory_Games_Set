@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./MemoryGame2.css";
 import { wordLists } from "../data";
+import InputList from "../components/InputList";
+import PrintList from "../components/PrintList";
 
 const MemoryGame2 = () => {
   const listnum = Math.floor(Math.random() * 15);
   const initialWords = wordLists[listnum];
-  const [words, setWords] = useState(initialWords);
+  const [words, setWords] = useState([...initialWords]);
+  const [suffleWords, setSuffleWords] = useState([]);
   const [count, Setcount] = useState(0);
   const [timer, setTimer] = useState(20);
   const [completed, setCompleted] = useState(false);
-  const [incompleted, setinCompleted] = useState(false);
+  const [completionMsg, setCompletionMsg] = useState("");
+  const [newGame, setNewGame] = useState(true);
+
+  console.log(listnum, words);
 
   useEffect(() => {
     if (timer > 0 && !completed) {
@@ -33,40 +39,29 @@ const MemoryGame2 = () => {
   const handleStartGame = () => {
     setTimer(20);
     setCompleted(false);
+    setCompletionMsg("");
     setWords(initialWords);
+    setNewGame(true);
   };
 
   const handleCheckOrder = () => {
-    if (words.join("") === initialWords.join("")) {
+    if (words.join("") === suffleWords.join("")) {
       setCompleted(true);
-      setinCompleted(false);
+      setCompletionMsg("Congratulations! You arranged the words correctly.");
       Setcount(count + 1);
     } else {
-      setinCompleted(true);
-      setCompleted(false);
+      setCompletionMsg(
+        "Uh Oh! The words aren't arranged correctly, Try Some More",
+      );
     }
+    setNewGame(false);
   };
 
   useEffect(() => {
     if (timer === 0) {
-      setWords(shuffleArray(initialWords));
+      setSuffleWords(shuffleArray(words));
     }
   }, [timer]);
-
-  function generateList() {
-    return words.map((word, index) => (
-      <li key={index}>
-        <input
-          type="text"
-          value={words[index]}
-          onChange={(e) => {
-            const updatedWords = [...words];
-            updatedWords[index] = e.target.value;
-          }}
-        />
-      </li>
-    ));
-  }
 
   return (
     <div className="memory-game">
@@ -77,30 +72,23 @@ const MemoryGame2 = () => {
         {timer > 0 ? (
           <div>
             <p>Memorize the words for {timer} seconds:</p>
-            <ul>
-              {words.map((word, index) => (
-                <li key={index}>{word}</li>
-              ))}
-            </ul>
+            <PrintList words={words} />
           </div>
         ) : (
           <div>
             <p>Arrange the words in the correct order:</p>
-            <ul>{generateList()}</ul>
-            <button onClick={handleCheckOrder}>Check Order</button>
-            {completed && (
-              <p>Congratulations! You arranged the words correctly.</p>
-            )}
-            {incompleted && (
-              <p>Uh Oh! The words aren't arranged correctly, Try Some More</p>
-            )}
+            <ul>
+              <InputList words={suffleWords} setWords={setSuffleWords} />
+            </ul>
+            {newGame && <button onClick={handleCheckOrder}>Check Order</button>}
+            <p>{completionMsg}</p>
           </div>
         )}
       </div>
       <div id="next">
-        <button onClick={handleStartGame}>Restart Game</button>
+        {!newGame && <button onClick={handleStartGame}>Restart Game</button>}
       </div>
-      <div id="score">Score: {count}</div>
+      {!newGame && <div id="score">Score: {count}</div>}
     </div>
   );
 };

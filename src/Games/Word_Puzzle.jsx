@@ -3,6 +3,7 @@ import { wordpuzzlehint, words } from "../data";
 
 function WordPuzzleGame() {
   const [word, setWord] = useState("");
+  const [score, SetScore] = useState(0);
   const [shuffledWord, setShuffledWord] = useState("");
   const [isCorrect, setIsCorrect] = useState(false);
   const [inputValue, setInputValue] = useState("");
@@ -18,7 +19,7 @@ function WordPuzzleGame() {
       randomWord
         .split("")
         .sort(() => 0.5 - Math.random())
-        .join("")
+        .join(""),
     );
     setIsCorrect(false);
     setInputValue("");
@@ -33,6 +34,7 @@ function WordPuzzleGame() {
       setIsCorrect(true);
       setInputValue("");
       setHint("");
+      SetScore(score + 1);
     }
   };
 
@@ -56,6 +58,7 @@ function WordPuzzleGame() {
       {hint && <p>Hint: {hint}</p>}
       <button onClick={generateWord}>Next Word</button>
       <button onClick={() => setHint(hints[word])}>Hint</button>
+      <div id="score">Score: {score}</div>
     </div>
   );
 }

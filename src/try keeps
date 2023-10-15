@@ -1,0 +1,17 @@
+export const wordLists = {
+  1: ["Apple", "Banana", "Cherry", "Grape", "Orange"],
+  2: ["Strawberry", "Lemon", "Peach", "Watermelon", "Pineapple"],
+  3: ["Mango", "Kiwi", "Pear", "Blueberry", "Raspberry"],
+  4: ["Dog", "Cat", "Elephant", "Lion", "Horse"],
+  5: ["Tiger", "Monkey", "Giraffe", "Kangaroo", "Zebra"],
+  6: ["Red", "Green", "Blue", "Yellow", "Purple"],
+  7: ["Orange", "Pink", "Brown", "Black", "White"],
+  8: ["Car", "Bicycle", "Bus", "Train", "Boat"],
+  9: ["Helicopter", "Motorcycle", "Scooter", "Truck", "Aeroplane"],
+  10: ["One", "Four", "Three", "Five", "Two"],
+  11: ["Six", "Seven", "Eight", "Nine", "Ten"],
+  12: ["Circle", "Square", "Triangle", "Rectangle", "Oval"],
+  13: ["Diamond", "Heart", "Star", "Crescent", "Hexagon"],
+  14: ["Pizza", "Burger", "Pasta", "Salad", "Sushi"],
+  15: ["Pancake", "Ice Cream", "Sandwich", "Cake", "Spaghetti"],
+};
