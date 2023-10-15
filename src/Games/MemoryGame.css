@@ -1,3 +1,10 @@
+#main-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .memorygame {
   display: grid;
   grid-template-columns: repeat(4, 100px);

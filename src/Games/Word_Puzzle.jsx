@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { wordpuzzlehint, words } from "../data";
+import "./word_puzzle.css";
 
 let score2 = 0;
 
@@ -48,7 +49,7 @@ function WordPuzzleGame() {
   score2 = score;
 
   return (
-    <div>
+    <div id="main">
       <h1>Word Puzzle Game</h1>
       <p>Unscramble the word:</p>
       <p>{shuffledWord}</p>

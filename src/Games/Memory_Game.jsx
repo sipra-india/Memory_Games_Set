@@ -86,7 +86,7 @@ const MemoryGame = () => {
   score1 = score;
 
   return (
-    <div>
+    <div id="main-game">
       <h1>Card Memory Challenge</h1>
       {showWords && <p>Flipping the cards in 3 seconds</p>}
       <div className="memorygame">
