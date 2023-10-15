@@ -30,6 +30,7 @@ const MemoryGame = () => {
   const [flipped, setFlipped] = useState([]);
   const [solved, setSolved] = useState([]);
   const [disabled, setDisabled] = useState(false);
+  const [cardcount, SetCardcount] = useState([]);
 
   useEffect(() => {
     if (flipped.length === 2) {
@@ -37,13 +38,18 @@ const MemoryGame = () => {
 
       if (cards[flipped[0]] === cards[flipped[1]]) {
         setSolved([...solved, cards[flipped[0]]]);
+        SetCardcount([...cardcount, 1]);
       }
 
       setTimeout(() => {
         setFlipped([]);
         setDisabled(false);
+        if (flipped.length === 12) {
+          alert("Congratulations! You've won the game!");
+        }
       }, 1000);
     }
+    console.log(SetCardcount);
   }, [flipped, cards, solved]);
 
   const handleCardClick = (index) => {
@@ -69,7 +75,7 @@ const MemoryGame = () => {
               handleCardClick(index)
             }
           >
-            <div className="front">Front</div>
+            <div className="front"></div>
             <div className="back">{card}</div>
           </div>
         ))}
