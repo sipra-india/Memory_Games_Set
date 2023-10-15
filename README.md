@@ -1,34 +1,32 @@
-## Age Well
+# AgeWell
 
 ## Inspiration 🚀
-We were inspired to create AgeWell after learning about the challenges and needs of older adults in maintaining their cognitive health and well-being. We wanted to create a fun and engaging way for seniors to improve their memory skills and prevent cognitive decline. We also wanted to use data analysis to measure and compare the performance and progress of our users.
+The AgeWell project was inspired by the challenges and needs of older adults in maintaining their cognitive health and well-being. The team aimed to create an engaging solution for seniors to enhance their memory skills and counter cognitive decline. Additionally, data analysis was employed to assess and compare user performance and progress.
 
 ## What it does 🎯
-AgeWell is a web app that helps seniors improve their memory through brain training games. The app provides different types of word memory games, such as word recall, word ordering, and word unscrambling. The app also provides personalized feedback to the users based on their performance and progress. The app is designed to be user-friendly, accessible, and enjoyable for seniors.
+AgeWell is a web app designed to aid seniors in memory improvement through brain training games. It offers various word memory games, including word recall, word ordering, and word unscrambling. Users receive personalized feedback based on their performance and progress. The app prioritizes user-friendliness, accessibility, and an enjoyable experience for seniors.
 
 ## How we built it 🔧
-- We built AgeWell using HTML, CSS, JavaScript, and React as our frontend technologies. We also used  React library to make our app more interactive and dynamic.
-- We used Python and matplotlib as our data analysis tools. We also used Pandas to manipulate and analyze the data.
--We used R and RStudio as our data extraction tool. We used the data from the ACTIVE study, which is a large-scale and long-term study that tested the effects of three cognitive interventions (memory, reasoning, and speed of processing) on older adults1. We used various functions and commands in R to explore and export our data to csv.
+- AgeWell was built using HTML, CSS, JavaScript, and React for frontend development. React enhanced interactivity and dynamism.
+- Python and Matplotlib were harnessed for data analysis, with Pandas for data manipulation and examination.
+- Data extraction utilized R and RStudio. Data from the ACTIVE study, a comprehensive, long-term investigation into the impact of cognitive interventions (memory, reasoning, and processing speed) on older adults, was processed in R. Data was then exported to CSV.
 
 ## Challenges we ran into 🚧
-We faced some challenges in integrating our frontend and backend technologies, converting our R model to Python, and testing our app on different devices and browsers.
+Challenges included integrating frontend and backend technologies, converting R models to Python, and cross-device and cross-browser app testing.
 
-## Accomplishments that we’re proud of 🏆
-- Creating a web app that helps seniors improve their memory: We’re proud of creating a web app that can provide a fun and engaging way for seniors to improve their memory skills and prevent cognitive decline.
-- Using data analysis to measure and compare the performance and progress of our users: We’re proud of using data analysis to provide personalized feedback and recommendations to our users based on their performance and progress.
-- Completing our project within the given time frame: We’re proud of completing our project within the given time frame despite facing some challenges along the way.
+## Accomplishments that we're proud of 🏆
+- Developing a web app that boosts seniors' memory skills: AgeWell offers a fun and engaging memory enhancement experience for seniors.
+- Leveraging data analysis to measure and compare user performance and progress: Personalized feedback and recommendations are provided based on user performance.
+- Completing the project on schedule: Despite challenges, the team delivered the project within the allotted time frame.
 
 ## What we learned 📚
-- How to use HTML, CSS, JavaScript, and React to create a responsive and interactive web app.
-- How to use Python and matplotlib to visualise and analyze data.
-- How to use RStudio to explore and export data from the ACTIVE study.
-- How to work as a team and collaborate effectively using tools like GitHub and Discord.
+- Skills in HTML, CSS, JavaScript, and React for crafting responsive, interactive web apps.
+- Proficiency in Python and Matplotlib for data visualization and analysis.
+- Data exploration and export with RStudio from the ACTIVE study.
+- Effective team collaboration via tools such as GitHub and Discord.
 
-## What’s next for AgeWell 🚀
-- Adding more types of word memory games, such as word association, word scramble, or word crossword.
-- Adding more options for customization, such as difficulty level, game duration, or theme color.
-- Adding more metrics for evaluation, such as accuracy, speed, or retention.
-- Testing our app with real users and collecting their feedback and suggestions.
-
-- 
+## What's next for AgeWell 🚀
+- Expanding the range of word memory games, including word association, word scramble, or word crossword.
+- Providing more customization options like difficulty levels, game durations, and theme colors.
+- Adding additional evaluation metrics, such as accuracy, speed, and retention.
+- Conducting user testing to gather feedback and suggestions for further improvements.
