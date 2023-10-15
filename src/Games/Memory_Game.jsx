@@ -32,6 +32,7 @@ const MemoryGame = () => {
   const [disabled, setDisabled] = useState(false);
   const [cardcount, SetCardcount] = useState([]);
   const [matchedPairs, setMatchedPairs] = useState(0);
+  const [score, SetScore] = useState(0);
 
   useEffect(() => {
     if (flipped.length === 2) {
@@ -62,9 +63,8 @@ const MemoryGame = () => {
     setFlipped([]);
     setCards(shuffleArray(animalImages));
     setDisabled(false);
+    setMatchedPairs(0);
   };
-
-  console.log(matchedPairs);
 
   return (
     <div>
@@ -88,8 +88,12 @@ const MemoryGame = () => {
           </div>
         ))}
       </div>
-      <button onClick={HandleStart}>Restart Game</button>
-      <p>{matchedPairs }</p>
+
+      {matchedPairs > 11000 && <p>Game WOn!</p> && SetScore(score + 1)}
+      {matchedPairs > 11000 && (
+        <button onClick={HandleStart}>Restart Game</button>
+      )}
+      <p>Score: {score}</p>
     </div>
   );
 };
