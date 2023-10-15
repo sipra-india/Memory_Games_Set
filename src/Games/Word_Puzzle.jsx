@@ -60,7 +60,8 @@ function WordPuzzleGame() {
       />
       {isCorrect && <p>Correct!</p>}
       {hint && <p>Hint: {hint}</p>}
-      <button onClick={generateWord}>Next Word</button>
+      {score < 12 && <button onClick={generateWord}>Next Word</button>}
+      {score >= 12 && <p>You have reached the maximum limit of 12 words</p>}
       <button onClick={() => setHint(hints[word])}>Hint</button>
       <div id="score">Score: {score}</div>
     </div>
