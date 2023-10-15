@@ -40,9 +40,9 @@ const MemoryGame = () => {
 
       if (cards[flipped[0]] === cards[flipped[1]]) {
         setSolved([...solved, cards[flipped[0]]]);
-      }
-      if (cards[flipped[0]] === cards[flipped[1]]) {
-        setMatchedPairs(matchedPairs + 1);
+        if (matchedPairs + 1 > matchedPairs) {
+          setMatchedPairs(matchedPairs + 1);
+        }
       }
 
       setTimeout(() => {
@@ -50,12 +50,13 @@ const MemoryGame = () => {
         setDisabled(false);
       }, 1000);
     }
-  }, [flipped, cards, solved]);
+  }, [flipped, cards, solved, matchedPairs]);
 
   const handleCardClick = (index) => {
     if (flipped.length < 2) {
       setFlipped([...flipped, index]);
     }
+    console.log("card clicked", index);
   };
 
   const HandleStart = () => {
@@ -89,11 +90,9 @@ const MemoryGame = () => {
         ))}
       </div>
 
-      {matchedPairs > 11000 && <p>Game WOn!</p> && SetScore(score + 1)}
-      {matchedPairs > 11000 && (
-        <button onClick={HandleStart}>Restart Game</button>
-      )}
-      <p>Score: {score}</p>
+      {matchedPairs > 6 && <p>Game WOn!</p>}
+      {matchedPairs > 6 && <button onClick={HandleStart}>Restart Game</button>}
+      <p>{matchedPairs}</p>
     </div>
   );
 };
