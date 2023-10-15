@@ -4,6 +4,8 @@ import { wordLists } from "../data";
 import InputList from "../components/InputList";
 import PrintList from "../components/PrintList";
 
+let score3 = 0;
+
 const MemoryGame2 = () => {
   const listnum = Math.floor(Math.random() * 15);
   const initialWords = wordLists[listnum];
@@ -61,6 +63,8 @@ const MemoryGame2 = () => {
     }
   }, [timer]);
 
+  score3 = count;
+
   return (
     <div className="memory-game">
       <div id="name">
@@ -92,3 +96,4 @@ const MemoryGame2 = () => {
 };
 
 export default MemoryGame2;
+export { score3 };

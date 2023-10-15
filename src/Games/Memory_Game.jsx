@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./MemoryGame.css";
 
+let score1 = 0;
+
 const MemoryGame = () => {
   const animalImages = [
     "cat",
@@ -71,6 +73,8 @@ const MemoryGame = () => {
     setMatchedPairs(0);
   };
 
+  score1 = score;
+
   return (
     <div>
       <h1>Card Memory Challenge</h1>
@@ -102,3 +106,4 @@ const MemoryGame = () => {
 };
 
 export default MemoryGame;
+export { score1 };

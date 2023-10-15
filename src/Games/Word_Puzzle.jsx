@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { wordpuzzlehint, words } from "../data";
 
+let score2 = 0;
+
 function WordPuzzleGame() {
   const [word, setWord] = useState("");
   const [score, SetScore] = useState(0);
@@ -43,6 +45,8 @@ function WordPuzzleGame() {
     setInputValue(e.target.value);
   };
 
+  score2 = score;
+
   return (
     <div>
       <h1>Word Puzzle Game</h1>
@@ -64,3 +68,4 @@ function WordPuzzleGame() {
 }
 
 export default WordPuzzleGame;
+export { score2 };
