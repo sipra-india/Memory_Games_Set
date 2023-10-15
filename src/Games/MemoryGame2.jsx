@@ -78,7 +78,7 @@ const MemoryGame2 = () => {
           </div>
         ) : (
           <div>
-            <p>Arrange the words in the correct order:</p>
+            <p id="arrange">Arrange the words in the correct order:</p>
             <ul>
               <InputList words={suffleWords} setWords={setSuffleWords} />
             </ul>

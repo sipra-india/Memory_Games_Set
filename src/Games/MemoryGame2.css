@@ -22,3 +22,12 @@ li {
   width: 100%;
   text-align: center;
 }
+
+#memorize-text {
+  border-bottom: 1px solid grey;
+}
+
+#arrange {
+  width: 100%;
+  text-align: center;
+}
