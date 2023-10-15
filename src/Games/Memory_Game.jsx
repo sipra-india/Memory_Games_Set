@@ -31,6 +31,7 @@ const MemoryGame = () => {
   const [solved, setSolved] = useState([]);
   const [disabled, setDisabled] = useState(false);
   const [cardcount, SetCardcount] = useState([]);
+  const [matchedPairs, setMatchedPairs] = useState(0);
 
   useEffect(() => {
     if (flipped.length === 2) {
@@ -38,18 +39,16 @@ const MemoryGame = () => {
 
       if (cards[flipped[0]] === cards[flipped[1]]) {
         setSolved([...solved, cards[flipped[0]]]);
-        SetCardcount([...cardcount, 1]);
+      }
+      if (cards[flipped[0]] === cards[flipped[1]]) {
+        setMatchedPairs(matchedPairs + 1);
       }
 
       setTimeout(() => {
         setFlipped([]);
         setDisabled(false);
-        if (flipped.length === 12) {
-          alert("Congratulations! You've won the game!");
-        }
       }, 1000);
     }
-    console.log(SetCardcount);
   }, [flipped, cards, solved]);
 
   const handleCardClick = (index) => {
@@ -57,6 +56,15 @@ const MemoryGame = () => {
       setFlipped([...flipped, index]);
     }
   };
+
+  const HandleStart = () => {
+    setSolved([]);
+    setFlipped([]);
+    setCards(shuffleArray(animalImages));
+    setDisabled(false);
+  };
+
+  console.log(matchedPairs);
 
   return (
     <div>
@@ -80,6 +88,8 @@ const MemoryGame = () => {
           </div>
         ))}
       </div>
+      <button onClick={HandleStart}>Restart Game</button>
+      <p>{matchedPairs }</p>
     </div>
   );
 };

@@ -15,8 +15,6 @@ const MemoryGame2 = () => {
   const [completionMsg, setCompletionMsg] = useState("");
   const [newGame, setNewGame] = useState(true);
 
-  console.log(listnum, words);
-
   useEffect(() => {
     if (timer > 0 && !completed) {
       const interval = setInterval(() => {
